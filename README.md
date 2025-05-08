@@ -13,15 +13,18 @@ A Spring Boot-based GraphQL API for managing events and organisers, supporting f
 ## ⚙️ Setup
 
 1. **Clone the repository**
+   
    ```bash
-   git clone https://github.com/ElazzouziHassan/GraphQLSpringBoot.git
-   cd GraphQLSpringBoot
+    git clone https://github.com/ElazzouziHassan/GraphQLSpringBoot.git
+    cd GraphQLSpringBoot
   ```
 2. **Run the application**
+  
   ```bash 
     mvn spring-boot:run
   ```
 3. **Access GraphiQL**
+  
   ```bash
     http://localhost:8080/graphiql
   ```
