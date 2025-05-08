@@ -1,0 +1,54 @@
+scalar LocalDateTime
+
+
+type Query {
+    events : [Event]
+    eventById(id : ID!) : Event
+
+    organisers: [Organiser]
+    organiserById(id: ID!): Organiser
+}
+
+type Mutation {
+    createEvent(eventInput : EventInput!) : Event
+    modifyEvent(id : ID!, eventInput : EventInput!) : Event
+    deleteEvent(id: ID!) : Boolean
+
+    createOrganiser(organiserInput : OrganiserInput!) : Organiser
+    modifyOrganiser(id :ID!, organiserInput : OrganiserInput!) : Organiser
+    deleteOrganiser(id: ID!) : Boolean
+}
+
+type Subscription {
+    notify(id: ID) : Event
+}
+
+input EventInput{
+    organiserId : ID
+    name : String!
+    description : String!
+    type : String!
+    time : LocalDateTime!
+    location: String!
+}
+
+type Event {
+    id : ID!
+    name : String!
+    description : String
+    type : String!
+    time : String
+    location : String
+    createdAt : LocalDateTime
+    updatedAt : LocalDateTime
+    organiser : Organiser
+}
+
+type Organiser {
+    id :ID!
+    name : String!
+    events : [Event]
+}
+input OrganiserInput {
+    name: String!
+}
